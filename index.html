@@ -14,99 +14,121 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Anda Tu Panel de control</title>
   </head>
-<body>
-    <div class="d-flex" id="content-wrapper">
-      <div id="sidebar-container" class="bg-primary">
+  <body>
+
+
+
+  <header>
         <div class="logo">
-          <h2 class="text-light font-weight-bold">Anda tu</h2>
+            <p>Anda Tu</p>
         </div>
-        <div class="menu">
-          <a href="#" class="d-block text-light p-3"><i class="icon ion-md-home mr-2 lead"></i></i> Inicio</a>
-          <a href="#" class="d-block text-light p-3"><i class="icon ion-md-basket mr-2 lead"></i></i> Despacho</a>
-          <a href="#" class="d-block text-light p-3"><i class="icon ion-md-list mr-2 lead"></i> Historial</a>
-          <a href="#" class="d-block text-light p-3"><i class="icon ion-md-contact mr-2 lead"></i> Perfil</a>
-          <a href="#" class="d-block text-light p-3"><i class="icon ion-md-flower mr-2 lead"></i> Configuracion</a>
-        </div>
-      </div>
-      <div id="content" class="w-100">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <nav>
+            <a href="login.html" class="myButton">Iniciar sesion</a>
+            <a href="registro.html" class="myButton">Registrarse</a>
 
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-                  <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <img src="img/user.jpg" class="img-fluid rounded-circle avatar mr-2">
-                  Nombre Usuario
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Inicio</a>
-                  <a class="dropdown-item" href="#">Despacho</a>
-                  <a class="dropdown-item" href="#">Historial</a>
-                  <a class="dropdown-item" href="#">Perfil</a>
-                  <a class="dropdown-item" href="#">Configuracion</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                </div>
-              </li>
-             </ul>
-            </div>
-          </div>
         </nav>
 
-        <div id="content" class="w-100">
-          <section class="w-75 py-3">
-            <div class="container">
-              <div class="row">
-                <div class="col-lg-9 col-md-8">
-                  <h1 class="font-weight-bold mb-0">Bienvenido</h1>
-                  <p class="lead text-muted"></p>
-                </div>
-                <div class="col-lg-3">
-                  <button class="btn btn-primary w-100">Despacho</button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="w-75 p-3">
-            <div class="container">
-              <div class="card">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-lg-3 d-flex stat my-3">
-                      <div class="mx-auto">
-                      <h4 class="text-muted">Saldo</h4>
-                      <h2 class="font-weight-bold">$10.000</h2>
-                    </div>
-                  </div>
-                  <div class="col-lg-3 d-flex stat my-3">
-                    <div class="mx-auto">
-                    <h4 class="text-muted">Cantidad de pedidos</h4>
-                    <h2 class="font-weight-bold">12</h2>
-                  </div>
-                </div>
-              </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-
-
+        <section class="textos-header">
+            <h1>Haz tus envíos</h1>
+            <h2>Fácilmente a través del metro y ahorra tiempo para tu negocio</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <main>
+        <div class="container" id="conts">
 
         </div>
 
-      </div>
-    </div>
+        <section class="contenedor sobre-nosotros">
+            <h2 class="titulo">Nuestro Servicio</h2>
+            <div class="contenedor-sobre-nosotros">
+                <img src="img/pasos.svg" alt="" class="imagen-about-us">
+                <div class="contenido-textos">
+                    <h3><span>1</span>Registrate</h3>
+                    <p>Registrate en la web.</p>
+                    <h3><span>2</span>Inicia Sesion</h3>
+                    <p>Inicia sesion con tu usuario y contraseña</p>
+                    <h3><span>3</span>Arma tu pedido</h3>
+                    <p>Ingresa tu pedido a enviar.</p>
+                    <h3><span>4</span>Envia</h3>
+                    <p>Paga tu despacho con diferentes medios de pago, entrega el paquete y espera que le llegue a tu cliente.</p>
+                </div>
+            </div>
+        </section>
+        <!--
+        <section class="clientes contenedor">
+            <h2 class="titulo">Que dicen nuestros clientes</h2>
+            <div class="cards">
+                <div class="card">
+                    <img src="img/face1.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/face2.jpg" alt="">
+                    <div class="contenido-texto-card">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+        <section class="about-services">
+            <div class="contenedor">
+                <h2 class="titulo">Nuestros servicios</h2>
+                <div class="servicio-cont">
+                    <div class="servicio-ind">
+                        <img src="img/orden.svg" alt="">
+                        <h3>Tiempo</h3>
+                        <p>Ahorra tiempo para dedicar a tu emprendimiento</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/cajas.svg" alt="">
+                        <h3>Envios</h3>
+                        <p>Haz multiples envios a tu clientela.</p>
+                    </div>
+                    <div class="servicio-ind">
+                        <img src="img/localizacion.svg" alt="">
+                        <h3>Rastreo</h3>
+                        <p>Ve en tiempo real en que estacion va tu paquete.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="contenedor-footer">
 
+            <div class="content-foo">
+                <h4>Telefono</h4>
+                <p>+56 98296312</p>
+            </div>
+            <div class="content-foo">
+                <h4>Email</h4>
+                <p>Contacto@email.cl</p>
+            </div>
+            <div class="content-foo">
+                <h4>Dirección</h4>
+                <p>Av. Gran</p>
+            </div>
+            <div class="content-foo">
+            <div class="servicio-ind2">
+                <h4>Descarga la app</h4>
+                <img src="img/app-store-google-4d63c31a3e.svg" alt="">
+            </div>
+            </div>
+        </div>
+        <h2 class="titulo-final">&copy; Anda Tu 2021</h2>
 
-
-
+    </footer>
+    <script src="/js/transantiago.js"></script>
 
 
 
