@@ -12,7 +12,7 @@ formLogin.addEventListener('submit', function (event) {
     event.preventDefault()
 
     let response_status
-    fetch(' http://127.0.0.1:8000/auth/token/login/', {
+    fetch('https://grindman.pythonanywhere.com/auth/token/login/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
