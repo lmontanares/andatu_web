@@ -28,7 +28,7 @@ formLogin.addEventListener('submit', function (event) {
 
                 console.log('Success:', data.auth_token);
                 sessionStorage.setItem('Token', data.auth_token);
-                window.location.href = "home.html";
+                window.location.href = "dashboard.html";
             } else {
                 console.log('revise sus credenciales')
             }
