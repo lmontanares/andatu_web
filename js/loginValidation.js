@@ -1,5 +1,6 @@
 const formlogin = document.getElementById("form-login")
 const parrafo = document.getElementById("warnings")
+const pass = document.getElementById("password")
 
 formlogin.addEventListener("submit", e=>{
     e.preventDefault()
