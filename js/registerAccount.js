@@ -31,7 +31,7 @@
                     }
                     else if(response_status === 400){
                         console.log('400', data);
-                        warning.innerHTML = 'No se puedo crear la cuenta'
+                        warning.innerHTML += 'No se pudo crear la cuenta <br>'
                     }
                 }
             )
