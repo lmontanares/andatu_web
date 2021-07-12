@@ -22,7 +22,176 @@ body {
     text-align: center;
     margin-bottom: 60px;
 }
+/*Form*/
+:root {
+    --colorTextos: #49454567;
+}
 
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::placeholder { 
+    color: black;
+    opacity: 0.3;
+  }
+
+
+
+/*body {
+    font-family: 'Roboto';
+    background: #fc4a1a; 
+background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a); 
+background: linear-gradient(to right, #f7b733, #fc4a1a); 
+
+    height: 750px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+h1{
+    text-align: center;
+    font-weight: 700;
+}
+.form-login{
+    background: #fff;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.form-login{
+    width: 100%;
+    margin: auto;
+}
+
+.form-login .grupo{
+    position: relative;
+    margin: 45px ;
+}
+
+form{
+    background: rgb(255, 255, 255);
+    width: 50%;
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    
+}
+
+.form{
+    width: 100%;
+    margin: auto;
+    
+}
+
+form .grupo{
+    position: relative;
+    margin: 45px ;
+}
+
+input{
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+select{
+    background: none;
+    color: #c6c6c6;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--colorTextos);
+}
+
+
+input:focus{ 
+    outline: none;
+    color: #5e5d5d;
+}
+
+label{
+    color: var(--colorTextos);
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+select:valid~label{
+    top: -14px;
+    font-size: 12px;
+    color: #2196f3;
+}
+.barra{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before{
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: linear-gradient(to right, #B06AB3, #4568DC);
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra::before{
+    width: 100%;
+}
+
+.warnings{
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #B06AB3;
+    padding-top: 20px;
+}
+
+button{
+    font-family: 'roboto';
+    background: #fc4a1a;  /* fallback for old browsers */
+
+
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: #fff;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media screen and (max-width:500px){
+    form{
+        width: 80%;
+    }
+}
 /* Header */
 
 header{
@@ -116,68 +285,6 @@ header .textos-header{
     width: 100%;
 }
 
-/*Formulario*/
-.form-register {
-    width: 400px;
-    background: hsl(13, 97%, 55%);
-    padding: 30px;
-    margin: auto;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    border-radius: 4px;
-    font-family: 'calibri';
-    color: white;
-    box-shadow: 7px 13px 37px #000;
-  }
-  
-  .form-register h4 {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-  
-  .controls {
-    width: 100%;
-    background: hsla(13, 97%, 55%, 0.452);
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 16px;
-    border: 1px solid #fff;
-    font-family: 'calibri';
-    font-size: 18px;
-    color: white;
-  }
-  
-  .form-register p {
-    height: 40px;
-    text-align: center;
-    font-size: 18px;
-    line-height: 40px;
-  }
-  
-  .form-register a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .form-register a:hover {
-    color: white;
-    text-decoration: underline;
-  }
-  
-  .form-register .botons {
-    width: 100%;
-    background: #1f53c5;
-    border: none;
-    padding: 12px;
-    color: white;
-    margin: 16px 0;
-    font-size: 16px;
-  }
-
-  ::placeholder { 
-    color: white;
-    opacity: 1; 
-  }
 /* About us */
 
 main .sobre-nosotros{
