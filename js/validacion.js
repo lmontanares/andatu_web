@@ -7,6 +7,10 @@ const form = document.getElementById("form")
 const parrafo = document.getElementById("warnings")
 const formlogin = document.getElementById("form-login")
 
+
+
+
+
 form.addEventListener("submit", e=>{
     e.preventDefault()
     let warnings = ""
@@ -55,7 +59,6 @@ formlogin.addEventListener("submit", e=>{
         warnings += `La contraseña no es valida <br>`
         entrar = true
     }
-   
 
     if(entrar){
         parrafo.innerHTML = warnings

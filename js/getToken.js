@@ -12,7 +12,7 @@ formLogin.addEventListener('submit', function (event) {
     event.preventDefault()
 
     let response_status
-    fetch(' http://127.0.0.1:8000/auth/token/login/', {
+    fetch('https://grindman.pythonanywhere.com/auth/token/login/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ formLogin.addEventListener('submit', function (event) {
 
                 console.log('Success:', data.auth_token);
                 sessionStorage.setItem('Token', data.auth_token);
-                window.location.href = "home.html";
+                window.location.href = "dashboard.html";
             } else {
                 console.log('revise sus credenciales')
             }
