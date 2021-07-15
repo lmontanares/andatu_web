@@ -1,4 +1,4 @@
-import 'API_calls'
+import 'js/temp_real/API_callseal/API_calls'
 
 let id_user = get_id().then(data => id_user = data.id)
 
