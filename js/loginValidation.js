@@ -2,6 +2,10 @@ const formlogin = document.getElementById("form-login")
 const parrafo = document.getElementById("warnings")
 const pass = document.getElementById("password")
 
+let token = sessionStorage.getItem('Token')
+        if (token) {
+            window.location.href = "dashboard.html";
+        }
 formlogin.addEventListener("submit", e => {
     e.preventDefault()
     if (validation()) {
