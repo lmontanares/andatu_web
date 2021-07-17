@@ -77,7 +77,7 @@ async function get_profile(id = 'me') {
 }
 
 
-function Table(id, name_receiver, content, status) {
+function Table(id = '', name_receiver = '', content = '', status = '') {
     this.id = id
     this.name_receiver = name_receiver
     this.content = content
@@ -97,6 +97,7 @@ let fill_table = async () => {
         singleRow.id = package_data.id
         singleRow.content = package_data.content
         d_list.forEach(delivery_data => {
+
             if (singleRow.id === delivery_data.id_package_1 && user.id === delivery_data.id_user_A) {
                 singleRow.name_receiver = delivery_data.name_receiver
                 singleRow.status = delivery_data.status
@@ -107,18 +108,16 @@ let fill_table = async () => {
             //TODO fix button
             let btn_text = ""
             btn_text = singleRow.status !== 'activo' ? 'Iniciar' : 'Detener';
-
             tableList.innerHTML += ` <tr>
                       <th scope="row">${singleRow.id}</th>
                       <td>${singleRow.name_receiver}</td>
                       <td>${singleRow.content}</td>
                       <td>${singleRow.status}</td>
-                      <td><button onclick="on_off(${singleRow.id},'${singleRow.status}')" id="delbtn" type="button" class="btn btn-warning">${btn_text}</button></td>
+                      <td><button onclick="on_off(${delivery_data.id},'${singleRow.status}')" id="delbtn" type="button" class="btn btn-primary">${btn_text}</button></td>
                    </tr>`
         })
     })
 }
-
 
 const on_off = async (id_package, status) => {
     let s;

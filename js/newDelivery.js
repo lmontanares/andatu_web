@@ -90,7 +90,7 @@ async function newDelivery(id_user, id_package) {
 
     if (response.status === 201) {
         alert("Paquete Ingresado!")
-        window.location.href = "pedidos.html";
+        window.location.href = "historial.html";
     }
     return await response.json()
 

@@ -65,6 +65,7 @@ const packageList = async () => {
 
 //comienza o termina un delivery
 const assingDelivery = async (delivery_id) => {
+    console.log("t")
     const user = await get_profile()
     const delivery_data = await deliveryList(delivery_id)
 
@@ -74,9 +75,7 @@ const assingDelivery = async (delivery_id) => {
     } else {
         body_delivery = {'id_user_B': user.id}
     }
-
     // let body_delivery ={'id_user_B': user.id}
-
     try {
         const url = `https://grindman.pythonanywhere.com/delivery/${delivery_id}/`
         const response = await fetch(url, {
@@ -88,7 +87,7 @@ const assingDelivery = async (delivery_id) => {
             method: 'PATCH',
             body: JSON.stringify(body_delivery)
         });
-        // await fill_table()
+        await fill_table()
         return await response.json()
         //TODO add if(responde.status)
 
@@ -104,23 +103,24 @@ let fill_table = async () => {
     const user = await get_profile()
 
     let code = ""
+    tableList.innerHTML = code
     //TODO fix button
     let counter = 0
-    console.log(d_list)
     d_list.forEach(delivery_data => {
         let msg;
-        // code = ""
+
+        code = ""
+
         p_list.forEach(package_data => {
-            let btn_text;
-            if (delivery_data.id_package_1 === package_data.id) {
+            if (delivery_data.status === 'activo') {
+                if (delivery_data.id_package_1 === package_data.id) {
+                    if (package_data.id_user !== user.id) {
+                        if (delivery_data.id_user_A !== user.id) {
+                            console.log('hello world')
 
-                if (package_data.id_user !== user.id && delivery_data.id_user_A !== user.id) {
-                    console.log(`${delivery_data.id_user_A}--------------${user.id}`)
-                    console.log(`${package_data.id_user}!!!--------------${user.id}`)
-
-                    msg = !delivery_data.id_user_B ? 'No' : 'Si';
-                    btn_text = !delivery_data.id_user_B ? 'Iniciar Envio' : 'Detener Envio';
-                    code += ` <tr>
+                            msg = !delivery_data.id_user_B ? 'No' : 'Si';
+                            let btn_text = !delivery_data.id_user_B ? 'Iniciar Envio' : 'Detener Envio';
+                            code += ` <tr>
                       <th scope="row">${delivery_data.id}</th>
                       <td>${package_data.content} </td>
                       <td>${package_data.weight}</td>
@@ -131,10 +131,15 @@ let fill_table = async () => {
                       <td><button onclick="assingDelivery(${delivery_data.id})" id="start_btn" type="button" class="btn btn-warning">${btn_text}</button></td>
                       <td><button id="" type="button" class="btn btn-warning">MAP placeholder</button></td>
                    </tr>`
-                    if (typeof code !== 'undefined') {
-                        counter++;
-                        console.log('counter' + counter)
-                        tableList.innerHTML += code
+                            if (typeof code !== 'undefined') {
+                                counter++;
+                                console.log('counter' + counter)
+                                tableList.innerHTML += code
+                            } else {
+                                console.log("error here")
+
+                            }
+                        }
                     }
                 }
             }
