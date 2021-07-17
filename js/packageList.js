@@ -56,6 +56,25 @@ const del_package = async (id) => {
     return await response.json()
 }
 
+async function get_profile(id = 'me') {
+    try {
+        const url = `https://grindman.pythonanywhere.com/auth/users/${id}/`
+        const response = await fetch(url, {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: "Token " + sessionStorage.getItem('Token')
+            },
+            method: 'GET',
+        });
+        return await response.json()
+
+        //TODO add if(responde.status)
+
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 function Table(id, name_receiver, content, status) {
     this.id = id
@@ -64,43 +83,49 @@ function Table(id, name_receiver, content, status) {
     this.status = status
 }
 
-
-
-let fill_table = async (args) => {
+let fill_table = async () => {
     tableList.innerHTML = ""
     const p_list = await packageList()
     const d_list = await deliveryList()
+    const user = await get_profile()
 
     let singleRow = new Table()
+
     p_list.forEach(package_data => {
+
         singleRow.id = package_data.id
         singleRow.content = package_data.content
         d_list.forEach(delivery_data => {
-            if (singleRow.id === delivery_data.id_package_1) {
+            if (singleRow.id === delivery_data.id_package_1 && user.id === delivery_data.id_user_A) {
                 singleRow.name_receiver = delivery_data.name_receiver
                 singleRow.status = delivery_data.status
             } else {
                 return
             }
-
             //TODO fix button
+            let btn_text = ""
+            if (singleRow.status !== 'activo') {
+                btn_text = 'Iniciar'
+            } else {
+                btn_text = 'Detener'
+            }
+
             tableList.innerHTML += ` <tr>
                       <th scope="row">${singleRow.id}</th>
                       <td>${singleRow.name_receiver}</td>
                       <td>${singleRow.content}</td>
                       <td>${singleRow.status}</td>
-                      <td><button onclick="on_off(${singleRow.id},'${singleRow.status}')" id="delbtn" type="button" class="btn btn-warning">Iniciar/Detener</button></td>
+                      <td><button onclick="on_off(${singleRow.id},'${singleRow.status}')" id="delbtn" type="button" class="btn btn-warning">${btn_text}</button></td>
                    </tr>`
         })
     })
 }
 
-
 const on_off = async (id_package, status) => {
     let s;
     if (status !== 'activo') {
         s = 'activo'
-    } else{
+    } else {
         s = 'detenido'
     }
     let body_patch = {
@@ -117,18 +142,19 @@ const on_off = async (id_package, status) => {
             method: 'PATCH',
             body: JSON.stringify(body_patch)
         });
-        console.log(await response.json())
+        await fill_table()
+        return await response.json()
 
         //TODO add if(responde.status)
     } catch (error) {
         console.log(error)
     }
 
-fill_table()
+
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    fill_table()
 
-// function on_off()
-// {console.log("hello world")}
 
-fill_table()
+});

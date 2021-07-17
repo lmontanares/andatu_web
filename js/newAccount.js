@@ -51,6 +51,7 @@ const reg_account = async (body) => {
             if (data.rut) {
                 parrafo.innerHTML += `${data.rut[0]} <br>`
             }
+
         }
         console.log("Response Status " + response.status)
     } catch (e) {
@@ -92,12 +93,15 @@ function validation() {
         warnings += `El telefono no es valido <br>`
         entrar = true
     }
+    if (pass.value !== re_pass.value) {
+        warnings += `Contraseñas no coinciden <br>`
+        entrar = true
+    }
 
     if (entrar) {
         parrafo.innerHTML = warnings
         return false
     } else {
-
         return true
 
     }
