@@ -76,12 +76,14 @@ async function get_profile(id = 'me') {
     }
 }
 
+
 function Table(id, name_receiver, content, status) {
     this.id = id
     this.name_receiver = name_receiver
     this.content = content
     this.status = status
 }
+
 
 let fill_table = async () => {
     tableList.innerHTML = ""
@@ -92,7 +94,6 @@ let fill_table = async () => {
     let singleRow = new Table()
 
     p_list.forEach(package_data => {
-
         singleRow.id = package_data.id
         singleRow.content = package_data.content
         d_list.forEach(delivery_data => {
@@ -100,15 +101,12 @@ let fill_table = async () => {
                 singleRow.name_receiver = delivery_data.name_receiver
                 singleRow.status = delivery_data.status
             } else {
+                //para terminar el loop
                 return
             }
             //TODO fix button
             let btn_text = ""
-            if (singleRow.status !== 'activo') {
-                btn_text = 'Iniciar'
-            } else {
-                btn_text = 'Detener'
-            }
+            btn_text = singleRow.status !== 'activo' ? 'Iniciar' : 'Detener';
 
             tableList.innerHTML += ` <tr>
                       <th scope="row">${singleRow.id}</th>
@@ -120,6 +118,7 @@ let fill_table = async () => {
         })
     })
 }
+
 
 const on_off = async (id_package, status) => {
     let s;
