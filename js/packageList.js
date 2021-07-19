@@ -84,7 +84,6 @@ const Table = function Table(id = '', name_receiver = '', content = '', status =
     this.status = status
 }
 
-
 let fill_table = async () => {
     tableList.innerHTML = ""
     const p_list = await packageList()
@@ -160,5 +159,6 @@ const on_off = async (id_package, status) => {
 document.addEventListener("DOMContentLoaded", function () {
     fill_table()
 
-
 });
+
+

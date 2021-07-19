@@ -65,14 +65,14 @@ const packageList = async (id = '') => {
     }
 }
 
-const endDelivery = async (id='') =>{
+const endDelivery = async (id = '') => {
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const delivery_id = urlParams.get('id')
 
     let body_end = {
-        'status':'finalizado'
+        'status': 'finalizado'
     }
 
     try {
@@ -88,8 +88,7 @@ const endDelivery = async (id='') =>{
         });
 
         alert('Delivery Finalizado')
-             window.location.href = "dashboard.html";
-
+        window.location.href = "dashboard.html";
 
 
         return await response.json()
@@ -104,7 +103,6 @@ const endDelivery = async (id='') =>{
 
 let fill_tables = async () => {
     let code = '';
-
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -161,7 +159,6 @@ let fill_tables = async () => {
     tablePackage.innerHTML = code
 
 
-
     map.innerHTML = `<img src="https://maps.googleapis.com/maps/api/staticmap?center=metro+${delivery_list.metro_init},chile&markers=color:blue%7Clabel:S%7C11211%7C11206%7C11222|&zoom=13&size=600x300&maptype=roadmap&key=AIzaSyB-ycEZ4Uof2nK2Y0cOjn7kwE08D3ovVmw" />`
 }
 
@@ -169,6 +166,7 @@ let fill_tables = async () => {
 document.addEventListener("DOMContentLoaded", function () {
 
     fill_tables()
+    get_profile
 
 
 });
