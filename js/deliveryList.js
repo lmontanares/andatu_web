@@ -113,11 +113,10 @@ let fill_table = async () => {
                 if (delivery_data.id_package_1 === package_data.id) {
                     if (package_data.id_user !== user.id) {
                         if (delivery_data.id_user_A !== user.id) {
-
-
-                            msg = !delivery_data.id_user_B ? 'No' : 'Si';
-                            let btn_text = !delivery_data.id_user_B ? 'Iniciar Envio' : 'Detener Envio';
-                            code += ` <tr>
+                            if (!delivery_data.id_user_B || delivery_data.id_user_B === user.id) {
+                                msg = !delivery_data.id_user_B ? 'No' : 'Si';
+                                let btn_text = !delivery_data.id_user_B ? 'Iniciar Envio' : 'Detener Envio';
+                                code += ` <tr>
                       <th scope="row">${delivery_data.id}</th>
                       <td>${package_data.content} </td>
                       <td>${package_data.weight}</td>
@@ -127,14 +126,14 @@ let fill_table = async () => {
                       <td>${msg}</td>
                       <td><button onclick="assingDelivery(${delivery_data.id})" id="start_btn" type="button" class="btn btn-primary">${btn_text}</button></td>
                       <td><button onclick="go_toMap(${delivery_data.id})" id="" type="button" class="btn btn-warning">MAP placeholder</button></td>
-                   </tr>`
-                            if (typeof code !== 'undefined') {
-                                counter++;
-                                console.log('counter' + counter)
-                                tableList.innerHTML += code
-                            } else {
-                                console.log("error here")
-
+                   </tr>`;
+                                if (typeof code !== 'undefined') {
+                                    counter++;
+                                    // console.log('counter' + counter)
+                                    tableList.innerHTML += code
+                                } else {
+                                    console.log("error here")
+                                }
                             }
                         }
                     }
@@ -146,8 +145,9 @@ let fill_table = async () => {
         // }
     })
 }
-function go_toMap(id_delivery){
-     window.location.href = `map.html?id=${id_delivery}`;
+
+function go_toMap(id_delivery) {
+    window.location.href = `map.html?id=${id_delivery}`;
 }
 
 //TODO add this to other pages
