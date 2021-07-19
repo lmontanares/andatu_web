@@ -1,8 +1,5 @@
+import {get_profile} from './test_export'
 
-// You can name it as you like
-const availableFormattedUrl = require('./file1');
+const t = get_profile()
 
-// You need an async function to wait for the result
-(async ()=> {
-    console.log(await availableFormattedUrl);
-})();
+console.log(t)
