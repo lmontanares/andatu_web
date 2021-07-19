@@ -125,8 +125,8 @@ let fill_table = async () => {
                       <td>${delivery_data.metro_final}</td>
                       <td>${delivery_data.status}</td>
                       <td>${msg}</td>
-                      <td><button onclick="assingDelivery(${delivery_data.id})" id="start_btn" type="button" class="btn btn-warning">${btn_text}</button></td>
-                      <td><button id="" type="button" class="btn btn-warning">MAP placeholder</button></td>
+                      <td><button onclick="assingDelivery(${delivery_data.id})" id="start_btn" type="button" class="btn btn-primary">${btn_text}</button></td>
+                      <td><button onclick="go_toMap(${delivery_data.id})" id="" type="button" class="btn btn-warning">MAP placeholder</button></td>
                    </tr>`
                             if (typeof code !== 'undefined') {
                                 counter++;
