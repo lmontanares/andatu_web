@@ -97,8 +97,6 @@ const endDelivery = async (id = '') => {
     } catch (error) {
         console.log(error)
     }
-
-
 }
 
 let fill_tables = async () => {
