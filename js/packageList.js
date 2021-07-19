@@ -90,14 +90,15 @@ let fill_table = async () => {
     const p_list = await packageList()
     const d_list = await deliveryList()
     const user = await get_profile()
-
+    let code = "";
     let singleRow = new Table()
 
     p_list.forEach(package_data => {
+        code = ""
         singleRow.id = package_data.id
         singleRow.content = package_data.content
         d_list.forEach(delivery_data => {
-
+            tableList.innerHTML = ""
             if (singleRow.id === delivery_data.id_package_1 && user.id === delivery_data.id_user_A) {
                 singleRow.name_receiver = delivery_data.name_receiver
                 singleRow.status = delivery_data.status
@@ -107,14 +108,19 @@ let fill_table = async () => {
             }
             //TODO fix button
             let btn_text = ""
+            let btn = ''
             btn_text = singleRow.status !== 'activo' ? 'Iniciar' : 'Detener';
-            tableList.innerHTML += ` <tr>
+            if (singleRow.status !== 'finalizado') {
+                btn = `<button onclick="on_off(${delivery_data.id},'${singleRow.status}')" id="delbtn" type="button" class="btn btn-primary">${btn_text}</button>`
+            }
+            code += ` <tr>
                       <th scope="row">${singleRow.id}</th>
                       <td>${singleRow.name_receiver}</td>
                       <td>${singleRow.content}</td>
                       <td>${singleRow.status}</td>
-                      <td><button onclick="on_off(${delivery_data.id},'${singleRow.status}')" id="delbtn" type="button" class="btn btn-primary">${btn_text}</button></td>
+                      <td>${btn}</td>
                    </tr>`
+            tableList.innerHTML = code
         })
     })
 }

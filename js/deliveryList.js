@@ -65,7 +65,6 @@ const packageList = async () => {
 
 //comienza o termina un delivery
 const assingDelivery = async (delivery_id) => {
-    console.log("t")
     const user = await get_profile()
     const delivery_data = await deliveryList(delivery_id)
 
@@ -108,15 +107,13 @@ let fill_table = async () => {
     let counter = 0
     d_list.forEach(delivery_data => {
         let msg;
-
         code = ""
-
         p_list.forEach(package_data => {
             if (delivery_data.status === 'activo') {
                 if (delivery_data.id_package_1 === package_data.id) {
                     if (package_data.id_user !== user.id) {
                         if (delivery_data.id_user_A !== user.id) {
-                            console.log('hello world')
+
 
                             msg = !delivery_data.id_user_B ? 'No' : 'Si';
                             let btn_text = !delivery_data.id_user_B ? 'Iniciar Envio' : 'Detener Envio';
@@ -149,9 +146,11 @@ let fill_table = async () => {
         // }
     })
 }
+function go_toMap(id_delivery){
+     window.location.href = `map.html?id=${id_delivery}`;
+}
+
 //TODO add this to other pages
 document.addEventListener("DOMContentLoaded", function () {
     fill_table()
-
-
 });
