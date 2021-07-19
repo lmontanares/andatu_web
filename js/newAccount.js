@@ -51,6 +51,9 @@ const reg_account = async (body) => {
             if (data.rut) {
                 parrafo.innerHTML += `${data.rut[0]} <br>`
             }
+            if(data.password){
+                parrafo.innerHTML += `${data.password[0]} <br>`
+            }
 
         }
         console.log("Response Status " + response.status)

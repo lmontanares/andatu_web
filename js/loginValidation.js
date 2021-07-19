@@ -39,7 +39,6 @@ const get_token = async (body) => {
     }
 }
 
-
 function validation() {
     let warnings = ""
     let entrar = false

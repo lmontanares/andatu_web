@@ -77,7 +77,7 @@ async function get_profile(id = 'me') {
 }
 
 
-function Table(id = '', name_receiver = '', content = '', status = '') {
+const Table = function Table(id = '', name_receiver = '', content = '', status = '') {
     this.id = id
     this.name_receiver = name_receiver
     this.content = content

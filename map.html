@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="js/checkSession.js"></script>
+    <script type="module" src="js/apiCalls.js" ></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -91,42 +92,78 @@
                 </div>
             </section>
             <section>
-                <div class="col-xs-6">
-                    <h2 class="sub-header">Package</h2>
-                    <div class="table-responsive">
-                        <table class="table table-sm">
-                            <thead>
-                            <tr>
-                                <th class="col-md-1">Datos</th>
-                                <th class="col-md-2">Valor</th>
-                            </tr>
-                            </thead>
-                            <tbody id="package_list">
-                            <tr>
+                <div class="container">
+            <div class="float-sm-left p-1">
+              <div class="card-text">
+                     <h5 class="sub-header">Delivery</h5>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Datos</th>
+                      <th scope="col">Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody id="delivery_list">
 
-                            </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="float-sm-left p-1">
+              <div class="card-text">
+                  <h5 class="sub-header">Package</h5>
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Datos</th>
+                      <th scope="col">Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody id="package_list">
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-xs-6">
-                    <h2 class="sub-header">Delivery</h2>
-                    <div class="table-responsive">
-                        <table class="table table-sm">
-                            <thead>
-                            <tr>
-                                <th class="col-md-1">Datos</th>
-                                <th class="col-md-2">Valor</th>
-                            </tr>
-                            </thead>
-                            <tbody id="delivery_list">
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
             </section>
+<!--            <section>-->
+<!--                <div class="col-xs-6">-->
+<!--                    <h2 class="sub-header">Package</h2>-->
+<!--                    <div class="table-responsive">-->
+<!--                        <table class="table table-sm">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                <th class="col-md-1">Datos</th>-->
+<!--                                <th class="col-md-2">Valor</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody id="package_list">-->
+<!--                            <tr>-->
+
+<!--                            </tr>-->
+
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-xs-6">-->
+<!--                    <h2 class="sub-header">Delivery</h2>-->
+<!--                    <div class="table-responsive">-->
+<!--                        <table class="table table-sm">-->
+<!--                            <thead>-->
+<!--                            <tr>-->
+<!--                                <th class="col-md-1">Datos</th>-->
+<!--                                <th class="col-md-2">Valor</th>-->
+<!--                            </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody id="delivery_list">-->
+
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </section>-->
         </div>
     </div>
 </div>
